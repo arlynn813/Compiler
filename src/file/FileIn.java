@@ -8,14 +8,14 @@ import java.io.IOException;
 public class FileIn {
     private String filenameIn;
     private FileOut fileOut;
+    private static String [] stmts = {"decl","call","callr","ret","pushi"};
+    // used to map statement names onto statement classess
+    private static String[ ] stmtClasses = {"DeclStmt","CallStmt","CallrStmt", "RetStmt", "PushiStmt"};
 
     public FileIn(String f1, String f2) {
         filenameIn = f1;
         fileOut = new FileOut(f2);
     }
-   // private static String[ ] stmtClasses = {"DeclStmt",“CallStmt”,“CallrStmt”, “RetStmt”, “PushiStmt”};
-    // used to map statement names onto statement classess
-   // private static String[ ] stmts ={"decl","call","callr","ret","pushi"};
 
 public void compile() throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(filenameIn))) {
