@@ -13,8 +13,11 @@ public class FileIn {
         filenameIn = f1;
         fileOut = new FileOut(f2);
     }
+   // private static String[ ] stmtClasses = {"DeclStmt",“CallStmt”,“CallrStmt”, “RetStmt”, “PushiStmt”};
+    // used to map statement names onto statement classess
+   // private static String[ ] stmts ={"decl","call","callr","ret","pushi"};
 
-    public void compile() throws IOException {
+public void compile() throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(filenameIn))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -23,8 +26,9 @@ public class FileIn {
                 line = line.trim( );
                 line = line.replaceAll(",", " , ");
                 line = line.replaceAll("\\s+", " ");
-                String[ ] tokens = line.split("\\s");
-                token tokens[0];
+                String[ ] tokens;
+                tokens = line.split("\\s");
+                String token = tokens[0];
                 if (token != null) {
                     if (token.matches("decl|retr|call|add|...")) {
                         Stmt stmt = StatementFactory.getStatement(token);
