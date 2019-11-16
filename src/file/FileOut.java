@@ -1,19 +1,20 @@
 package file;
 
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
 
-public class FileOut {
-    private FileWriter fw;
+class FileOut {
+    private String filename;
 
-    public FileOut(String filename) throws IOException {
-        try (FileWriter writer = new FileWriter(filename)) {
-            fw = writer;
-        }
+    FileOut(String f) {
+        filename = f;
     }
 
-    public void writeByte(byte b) throws IOException {
-        fw.write(b);
+    void writeByte(byte b) throws IOException {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filename, true))) {
+            bw.write(b);
+        }
     }
 }
