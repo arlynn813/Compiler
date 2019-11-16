@@ -5,10 +5,10 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
-public class File {
+public class FileIn {
     private String filename;
 
-    public File(String f) {
+    public FileIn(String f) {
         filename = f;
     }
 
