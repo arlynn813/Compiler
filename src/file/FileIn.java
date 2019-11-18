@@ -1,5 +1,7 @@
 package file;
 
+import statement.Opcode;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -8,9 +10,6 @@ import java.io.IOException;
 public class FileIn {
     private String filenameIn;
     private FileOut fileOut;
-    private static String [] stmts = {"decl","call","callr","ret","pushi"};
-    // used to map statement names onto statement classess
-    private static String[ ] stmtClasses = {"DeclStmt","CallStmt","CallrStmt", "RetStmt", "PushiStmt"};
 
     public FileIn(String f1, String f2) {
         filenameIn = f1;
@@ -20,27 +19,32 @@ public class FileIn {
 public void compile() throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(filenameIn))) {
             String line;
+            Opcode opcode = new Opcode();
+
             while ((line = br.readLine()) != null) {
-                System.out.println(line);
-                // Parse the line
-                line = line.trim( );
-                line = line.replaceAll(",", " , ");
-                line = line.replaceAll("\\s+", " ");
-                String[ ] tokens;
-                tokens = line.split("\\s");
-                String token = tokens[0];
-                if (token != null) {
-                    if (token.matches("decl|retr|call|add|...")) {
-                        Stmt stmt = StatementFactory.getStatement(token);
-                        stmt.genCode(tokens);
-                    } else {
-                        System.out.println("Unknown stmt: "+token);
+
+                // Continue if line is not a comment
+                if (!line.startsWith("/")) {
+                    byte[] binaryOpcodes = opcode.generateOpcodes(getTokens(line));  // get opcodes for current line
+
+                    // Write opcodes to outfile
+                    // Note: this loop cannot run until specific generateOpcodes methods are finished
+                    // See Printi.generateOpcode for more details - currently binaryOpcodes is always null
+
+                    /*
+                    for (byte binaryOpcode : binaryOpcodes) {
+                        fileOut.writeByte(binaryOpcode);
                     }
+                    */
                 }
-                // Convert to opcode(s)
-                // Write opcode(s)
-                // fileOut.writeByte(line); --- tested and working with the line when method accepts a string
             }
         }
+    }
+
+    private String[] getTokens(String line) {
+        line = line.trim( );
+        line = line.replaceAll(",", " , ");
+        line = line.replaceAll("\\s+", " ");
+        return line.split("\\s");
     }
 }
