@@ -11,7 +11,7 @@ public class FileIn {
     private String filenameIn;
     private FileOut fileOut;
 
-    public FileIn(String f1, String f2) {
+    public FileIn(String f1, String f2) throws IOException {
         filenameIn = f1;
         fileOut = new FileOut(f2);
     }
