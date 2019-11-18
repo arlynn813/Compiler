@@ -18,6 +18,12 @@ public class Opcode {
     }
 
     public byte[] generateOpcodes(String[] tokens) {
-        return statementMap.get(tokens[0]).generateOpcodes(tokens);
+        if (statementMap.containsKey(tokens[0])) {
+            return statementMap.get(tokens[0]).generateOpcodes(tokens);
+        }
+
+        // Note: if we decide to still return null here, we must raise an error from within the compile method
+        System.out.println("unrecognized statement");
+        return null;
     }
 }

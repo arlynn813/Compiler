@@ -5,9 +5,8 @@ public class Statement {
     Statement() {}
 
     public byte[] generateOpcodes(String[] tokens) {
-        System.out.println("unrecognized statement");
-
-        // Note: if we decide to still return null here, we must raise an error from within the compile method
+        // This method should NEVER be called. It is simply overridden by all the derived classes
+        // We just want to retain the Statement object type so we can map strings to objects
         return null;
     }
 }
