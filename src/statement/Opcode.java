@@ -22,8 +22,8 @@ public class Opcode {
             return statementMap.get(tokens[0]).generateOpcodes(tokens);
         }
 
-        // Note: if we decide to still return null here, we must raise an error from within the compile method
-        System.out.println("unrecognized statement");
+        // TODO: If we decide to still return null here, we must raise an error from within the compile method
+        System.out.println("Statement not found. Make sure the statement is contained in statementStrings array.");
         return null;
     }
 }
