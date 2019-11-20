@@ -1,0 +1,30 @@
+/ Testing cmpe (expecting 1 0 0)
+pushi 1
+pushi 1
+cmpe
+pushi 1
+pushi 0
+cmpe
+pushi 0
+pushi 1
+cmpe
+/ Testing cmplt (expecting 1 0 0)
+pushi 0
+pushi 1
+cmplt
+pushi 1
+pushi 0
+cmplt
+pushi 1
+pushi 1
+cmplt
+/ Testing cmpgt (expecting 1 0 0)
+pushi 1
+pushi 0
+cmpgt
+pushi 0
+pushi 1
+cmpgt
+pushi 1
+pushi 1
+cmpgt
