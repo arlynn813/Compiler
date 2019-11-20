@@ -2,13 +2,22 @@ package statement;
 
 
 public class Printi extends Statement {
-    Printi() {}
+    private byte pushi;
+    private byte printi;
+
+    Printi() {
+        pushi = (byte) 70;
+        printi = (byte) 146;
+    }
 
     public byte[] generateOpcodes(String[] tokens) {
-        System.out.println("bc.pushi " + tokens[1]);
-        System.out.println("bc.printi");
+        byte[] integerBytes = integerToBytes(Integer.parseInt(tokens[1]));
+        byte[] opcodes = new byte[1];
 
-        // Needs to be changed to actual bytecode representation when algorithm is implemented
-        return null;
+        opcodes[0] = pushi;
+        opcodes = append(opcodes, integerBytes);
+        opcodes = append(opcodes, printi);
+
+        return opcodes;
     }
 }
