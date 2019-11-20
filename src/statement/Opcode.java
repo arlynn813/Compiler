@@ -6,8 +6,9 @@ import java.util.Map;
 
 public class Opcode {
     // Make sure statementObjects and statementStrings are in the correct order for mapping!
-    private static Statement[] statementObjects = {new Printi(), new Pushi(), new Cmpe(), new Cmplt(), new Cmpgt()};
-    private static String[] statementStrings = {"printi", "pushi", "cmpe", "cmplt", "cmpgt"};
+    private static Statement[] statementObjects = {new Printi(), new Pushi(), new Cmpe(), new Cmplt(), new Cmpgt(),
+            new Swp()};
+    private static String[] statementStrings = {"printi", "pushi", "cmpe", "cmplt", "cmpgt", "swp"};
     private static Map<String, Statement> statementMap = new HashMap<>();
 
     public Opcode() {

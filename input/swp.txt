@@ -1,0 +1,6 @@
+pushi 2
+pushi 1
+swp
+pushi 4
+pushi 3
+swp
