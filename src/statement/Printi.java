@@ -10,7 +10,6 @@ public class Printi extends Statement {
         printi = (byte) 146;
     }
 
-    // TODO: printi could print a literal or variable... Need to implement variable functionality
     public byte[] generateOpcodes(String[] tokens) {
         byte[] integerBytes = integerToBytes(Integer.parseInt(tokens[1]));
         byte[] opcodes = new byte[1];
