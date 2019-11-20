@@ -1,5 +1,6 @@
 package statement;
 
+
 public class Cmplt extends Statement {
     private byte cmplt;
 
