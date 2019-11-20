@@ -26,18 +26,12 @@ public void compile() throws IOException {
                 // Continue if line is not a comment
                 if (!line.startsWith("/")) {
                     byte[] binaryOpcodes = opcode.generateOpcodes(getTokens(line));  // get opcodes for current line
-
-                    // Write opcodes to outfile
-                    // Note: this loop cannot run until specific generateOpcodes methods are finished
-                    // See Printi.generateOpcode for more details - currently binaryOpcodes is always null
-
-                    /*
-                    for (byte binaryOpcode : binaryOpcodes) {
-                        fileOut.writeByte(binaryOpcode);
-                    }
-                    */
+                    fileOut.writeBytes(binaryOpcodes);
                 }
             }
+
+            // Halt the program
+            fileOut.writeByte((byte) 0);
         }
     }
 
