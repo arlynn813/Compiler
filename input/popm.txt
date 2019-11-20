@@ -1,0 +1,12 @@
+/ Pop 5 from list 1 to 10 (expected to keep 1 to 5)
+pushi 1
+pushi 2
+pushi 3
+pushi 4
+pushi 5
+pushi 6
+pushi 7
+pushi 8
+pushi 9
+pushi 10
+popm 5
