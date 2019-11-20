@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class Opcode {
     // Make sure statementObjects and statementStrings are in the correct order for mapping!
-    private static Statement[] statementObjects = {new Printi()};
-    private static String[] statementStrings = {"printi"};
+    private static Statement[] statementObjects = {new Printi(), new Pushi()};
+    private static String[] statementStrings = {"printi", "pushi"};
     private static Map<String, Statement> statementMap = new HashMap<>();
 
     public Opcode() {
