@@ -2,7 +2,8 @@ package statement;
 
 
 public class Statement {
-    Statement() {}
+    public Statement() {}
+
 
     public byte[] generateOpcodes(String[] tokens) {
         // This method should NEVER be called. It is simply overridden by all the derived classes
@@ -11,7 +12,7 @@ public class Statement {
     }
 
     // Append single byte to byte array
-    static byte[] append(byte[] bytes, byte b) {
+    protected static byte[] append(byte[] bytes, byte b) {
         byte[] newBytes = new byte[bytes.length + 1];
         int i;
 
@@ -24,7 +25,7 @@ public class Statement {
     }
 
     // Append array of bytes to byte array
-    static byte[] append(byte[] bytes, byte[] b) {
+    protected static byte[] append(byte[] bytes, byte[] b) {
         byte[] newBytes = new byte[bytes.length + b.length];
         int i;
 
@@ -39,7 +40,7 @@ public class Statement {
         return newBytes;
     }
 
-    static byte[] integerToBytes(int integer) {
+    protected static byte[] integerToBytes(int integer) {
         byte[] bytes = new byte[4];
         bytes[3] = (byte) ((integer >> 24) & 0xFF);
         bytes[2] = (byte) ((integer >> 16) & 0xFF);

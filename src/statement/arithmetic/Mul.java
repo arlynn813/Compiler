@@ -1,10 +1,12 @@
-package statement;
+package statement.arithmetic;
+
+import statement.Statement;
 
 
 public class Mul extends Statement {
     private byte mul;
 
-    Mul() {
+    public Mul() {
         mul = (byte) 108;
     }
 

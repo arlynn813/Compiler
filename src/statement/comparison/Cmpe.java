@@ -1,10 +1,12 @@
-package statement;
+package statement.comparison;
+
+import statement.Statement;
 
 
 public class Cmpe extends Statement {
     private byte cmpe;
 
-    Cmpe() {
+    public Cmpe() {
         cmpe = (byte) 132;
     }
 

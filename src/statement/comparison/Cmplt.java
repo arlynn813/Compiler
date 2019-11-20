@@ -1,10 +1,12 @@
-package statement;
+package statement.comparison;
+
+import statement.Statement;
 
 
 public class Cmplt extends Statement {
     private byte cmplt;
 
-    Cmplt() {
+    public Cmplt() {
         cmplt = (byte) 136;
     }
 

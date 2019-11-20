@@ -1,10 +1,12 @@
-package statement;
+package statement.arithmetic;
+
+import statement.Statement;
 
 
 public class Add extends Statement {
     private byte add;
 
-    Add() {
+    public Add() {
         add = (byte) 100;
     }
 

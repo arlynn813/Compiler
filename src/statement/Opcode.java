@@ -1,5 +1,10 @@
 package statement;
 
+import statement.arithmetic.*;
+import statement.comparison.*;
+import statement.display.*;
+import statement.manipulation.*;
+
 import java.util.HashMap;
 import java.util.Map;
 

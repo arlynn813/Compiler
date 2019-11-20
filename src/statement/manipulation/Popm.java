@@ -1,10 +1,13 @@
-package statement;
+package statement.manipulation;
+
+import statement.Statement;
+
 
 public class Popm extends Statement {
     private byte popm;
     private byte pushi;
 
-    Popm() {
+    public Popm() {
         popm = (byte) 76;
         pushi = (byte) 70;
     }

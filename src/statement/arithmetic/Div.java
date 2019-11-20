@@ -1,10 +1,12 @@
-package statement;
+package statement.arithmetic;
+
+import statement.Statement;
 
 
 public class Div extends Statement {
     private byte div;
 
-    Div() {
+    public Div() {
         div = (byte) 112;
     }
 

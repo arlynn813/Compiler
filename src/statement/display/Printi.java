@@ -1,20 +1,24 @@
-package statement;
+package statement.display;
+
+import statement.Statement;
 
 
-public class Pushi extends Statement {
+public class Printi extends Statement {
     private byte pushi;
+    private byte printi;
 
-    Pushi() {
+    public Printi() {
         pushi = (byte) 70;
+        printi = (byte) 146;
     }
 
-    // TODO: pushi could print a literal or variable... Need to implement variable functionality
     public byte[] generateOpcodes(String[] tokens) {
-        byte[] opcodes = new byte[1];
         byte[] integerBytes = integerToBytes(Integer.parseInt(tokens[1]));
+        byte[] opcodes = new byte[1];
 
         opcodes[0] = pushi;
         opcodes = append(opcodes, integerBytes);
+        opcodes = append(opcodes, printi);
 
         return opcodes;
     }

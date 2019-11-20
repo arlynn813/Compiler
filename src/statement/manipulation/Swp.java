@@ -1,10 +1,12 @@
-package statement;
+package statement.manipulation;
+
+import statement.Statement;
 
 
 public class Swp extends Statement {
     private byte swp;
 
-    Swp() {
+    public Swp() {
         swp = (byte) 94;
     }
 
