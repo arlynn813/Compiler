@@ -1,5 +1,6 @@
 package statement;
 
+
 public class Div extends Statement {
     private byte div;
 

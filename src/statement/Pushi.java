@@ -1,5 +1,6 @@
 package statement;
 
+
 public class Pushi extends Statement {
     private byte pushi;
 

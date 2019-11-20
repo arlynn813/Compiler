@@ -1,5 +1,6 @@
 package statement;
 
+
 public class Mul extends Statement {
     private byte mul;
 
