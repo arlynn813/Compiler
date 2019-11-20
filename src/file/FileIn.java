@@ -16,7 +16,7 @@ public class FileIn {
         fileOut = new FileOut(f2);
     }
 
-public void compile() throws IOException {
+    public void compile() throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(filenameIn))) {
             String line;
             Opcode opcode = new Opcode();
