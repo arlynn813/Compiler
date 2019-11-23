@@ -1,5 +1,6 @@
 package statement;
 
+import statement.decleration.Decl;
 import statement.arithmetic.*;
 import statement.comparison.*;
 import statement.display.*;
@@ -13,9 +14,9 @@ public class Opcode {
 
     // Make sure statementObjects and statementStrings are in the correct order for mapping!
     private static Statement[] statementObjects = {new Printi(), new Pushi(), new Cmpe(), new Cmplt(), new Cmpgt(),
-            new Swp(), new Add(), new Sub(), new Mul(), new Div(), new Popm()};
+            new Swp(), new Add(), new Sub(), new Mul(), new Div(), new Popm(),new Decl()};
     private static String[] statementStrings = {"printi", "pushi", "cmpe", "cmplt", "cmpgt", "swp", "add", "sub",
-            "mul", "div", "popm"};
+            "mul", "div", "popm","decl"};
     private static Map<String, Statement> statementMap = new HashMap<>();
 
     public Opcode() {
@@ -25,7 +26,7 @@ public class Opcode {
         }
     }
 
-    public byte[] generateOpcodes(String[] tokens) {
+    public byte[] getOpcodes(String[] tokens) {
         if (statementMap.containsKey(tokens[0])) {
             return statementMap.get(tokens[0]).generateOpcodes(tokens);
         }

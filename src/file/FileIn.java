@@ -25,7 +25,7 @@ public class FileIn {
 
                 // Continue if line is not a comment
                 if (!line.startsWith("/")) {
-                    byte[] binaryOpcodes = opcode.generateOpcodes(getTokens(line));  // get opcodes for current line
+                    byte[] binaryOpcodes = opcode.getOpcodes(getTokens(line));  // get opcodes for current line
                     fileOut.writeBytes(binaryOpcodes);
                 }
             }
@@ -35,7 +35,7 @@ public class FileIn {
         }
     }
 
-    private String[] getTokens(String line) {
+     public String[] getTokens(String line) {
         line = line.trim( );
         line = line.replaceAll(",", " , ");
         line = line.replaceAll("\\s+", " ");
