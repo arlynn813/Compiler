@@ -14,7 +14,7 @@ public class Decl extends Statement {
     }
     public byte[] generateOpcodes(String[] tokens) {
         Rstack value = new Rstack(tokens[1]+ tokens[2]);
-        symbol_table.put(getkey("main",tokens[1]),value);
+        symbol_table.put(getkey("main",tokens[1]),value.get_offset());
         Pushi out_obj = new Pushi();
         String[] arr = {"pushi","0"};
         return out_obj.generateOpcodes(arr);

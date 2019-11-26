@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Statement {
     public Statement() {}
-    protected static Map<String,Rstack> symbol_table = new HashMap<>();
+    protected static Map<String,Integer> symbol_table = new HashMap<>();
 
     public byte[] generateOpcodes(String[] tokens) {
         // This method should NEVER be called. It is simply overridden by all the derived classes
