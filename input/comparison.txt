@@ -1,3 +1,4 @@
+subr 0 main
 / Testing cmpe (expecting 1 0 0)
 pushi 1
 pushi 1

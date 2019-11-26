@@ -1,1 +1,2 @@
-pushi 15
+subr 0 main
+pushi 5

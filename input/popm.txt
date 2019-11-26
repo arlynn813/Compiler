@@ -1,3 +1,4 @@
+subr 0 main
 / Pop 5 from list 1 to 10 (expected to keep 1 to 5)
 pushi 1
 pushi 2

@@ -1,1 +1,2 @@
+subr 0 main
 printi 128

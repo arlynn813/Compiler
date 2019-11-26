@@ -1,3 +1,4 @@
+subr 0 main
 pushi 2
 pushi 1
 swp
