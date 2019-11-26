@@ -1,6 +1,6 @@
 package statement;
 
-import statement.decleration.Decl;
+import statement.declaration.Decl;
 import statement.arithmetic.*;
 import statement.comparison.*;
 import statement.display.*;

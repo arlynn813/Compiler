@@ -1,6 +1,5 @@
-package statement.decleration;
+package statement.declaration;
 
-import file.FileIn;
 import statement.Rstack;
 import statement.Statement;
 import statement.manipulation.Pushi;
