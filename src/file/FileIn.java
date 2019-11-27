@@ -29,6 +29,9 @@ public class FileIn {
                     fileOut.writeBytes(binaryOpcodes);
                 }
             }
+
+            // Halt the program
+            fileOut.writeByte((byte) 0);
         }
     }
 
