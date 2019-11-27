@@ -26,7 +26,11 @@ public class FileIn {
                 // Continue if line is not a comment or blank
                 if (!line.startsWith("/") && !line.isBlank()) {
                     byte[] binaryOpcodes = opcode.getOpcodes(getTokens(line));  // get opcodes for current line
-                    fileOut.writeBytes(binaryOpcodes);
+
+                    // Check validity of opcodes
+                    if (binaryOpcodes != null) {
+                        fileOut.writeBytes(binaryOpcodes);
+                    }
                 }
             }
         }
