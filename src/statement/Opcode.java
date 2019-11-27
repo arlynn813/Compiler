@@ -3,6 +3,7 @@ package statement;
 import statement.declaration.*;
 import statement.arithmetic.*;
 import statement.comparison.*;
+import statement.control.*;
 import statement.display.*;
 import statement.manipulation.*;
 
@@ -15,9 +16,9 @@ public class Opcode {
     // Make sure statementObjects and statementStrings are in the correct order for mapping!
     private static Statement[] statementObjects = {new Printi(), new Pushi(), new Cmpe(), new Cmplt(), new Cmpgt(),
             new Swp(), new Add(), new Sub(), new Mul(), new Div(), new Popm(), new Decl(), new Subr(), new Printv(),
-            new Popv(), new Pushv()};
+            new Popv(), new Pushv(), new Ret()};
     private static String[] statementStrings = {"printi", "pushi", "cmpe", "cmplt", "cmpgt", "swp", "add", "sub",
-            "mul", "div", "popm", "decl", "subr", "printv", "popv", "pushv"};
+            "mul", "div", "popm", "decl", "subr", "printv", "popv", "pushv", "ret"};
     private static Map<String, Statement> statementMap = new HashMap<>();
 
     public Opcode() {
