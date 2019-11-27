@@ -1,0 +1,11 @@
+subr 0 main
+
+decl one 1
+pushv one
+pushv one
+pushv one
+pushi 1
+popv one
+pushv one
+pushv one
+pushv one
