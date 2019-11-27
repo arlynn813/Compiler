@@ -13,7 +13,7 @@ public class Decl extends Statement {
         return key+func_label;
     }
     public byte[] generateOpcodes(String[] tokens) {
-        Rstack value = new Rstack(tokens[1]+ tokens[2]);
+        Rstack value = new Rstack();
         symbol_table.put(getkey("main",tokens[1]),value.get_offset());
         Pushi out_obj = new Pushi();
         String[] arr = {"pushi", "0"};
