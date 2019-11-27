@@ -1,0 +1,21 @@
+subr 0 main
+decl index int
+
+// Simple loop - print index 1 to 5
+lab loop
+// Note: the pc AFTER this instruction is 22 (pc offset)
+
+// Increment and print index
+pushv index
+pushi 1
+add
+popv index
+printv index
+
+// Loop if index is less than 5
+pushv index
+pushi 5
+cmplt
+jmpc loop
+
+ret
