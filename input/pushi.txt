@@ -1,2 +1,1 @@
-subr 0 main
 pushi 5

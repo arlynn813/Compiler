@@ -1,16 +1,18 @@
-subr 0 main
 / Add (5 + 5 = 10)
 pushi 5
 pushi 5
 add
+
 / Sub (20 - 5 = 15)
 pushi 20
 pushi 5
 sub
+
 / Mul (5 * 5 = 25)
 pushi 5
 pushi 5
 mul
+
 / Div (100 / 5 = 20)
 pushi 100
 pushi 5
