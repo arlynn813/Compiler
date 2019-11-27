@@ -1,8 +1,6 @@
 package statement.declaration;
 
-import statement.Rstack;
 import statement.Statement;
-import statement.display.Printi;
 
 
 public class Subr extends Statement {
@@ -17,9 +15,6 @@ public class Subr extends Statement {
     // Only usage of this statement: subr 0 main
     // This statement will only/always be found at the first line of the input file
     public byte[] generateOpcodes(String[] tokens) {
-        // Create symbol table entry
-        //Rstack value = new Rstack("main");
-        //symbol_table.put("main", value.get_offset());
 
         // Currently hard coding call instruction as call is only used for the initial main subroutine
         byte[] opcodes = new byte[1];
