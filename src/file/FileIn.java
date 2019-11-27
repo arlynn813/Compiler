@@ -18,10 +18,24 @@ public class FileIn {
 
     public void compile() throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(filenameIn))) {
+            br.mark(0);
             String line;
             Opcode opcode = new Opcode();
 
             while ((line = br.readLine()) != null) {
+
+                // Continue if line is not a comment or blank or lab
+                if (!line.startsWith("/") && !line.isBlank()) {
+                    opcode.set_pc(getTokens(line));  //update pc for each instruction, polymorphic call to update_pc()
+                    if(line.startsWith("lab")){
+
+                        opcode.up_lab(getTokens(line));
+                    }
+                }
+            }
+
+            BufferedReader brr = new BufferedReader(new FileReader(filenameIn));
+            while ((line = brr.readLine()) != null) {
 
                 // Continue if line is not a comment or blank
                 if (!line.startsWith("/") && !line.isBlank()) {
@@ -35,6 +49,7 @@ public class FileIn {
             }
         }
     }
+
 
      private String[] getTokens(String line) {
         line = line.trim( );

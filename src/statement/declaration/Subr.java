@@ -33,4 +33,7 @@ public class Subr extends Statement {
 
         return opcodes;
     }
+    public void update_pc() {
+        pc = 17;
+    }
 }
