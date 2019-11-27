@@ -6,10 +6,10 @@ import statement.Statement;
 public class Ret extends Statement {
     private byte pushi;
     private byte popa;
-    private byte ret;
+    private byte halt;
 
     public Ret() {
-        ret = (byte) 48;
+        halt = (byte) 0;
         pushi = (byte) 70;
         popa = (byte) 77;
     }
@@ -19,7 +19,7 @@ public class Ret extends Statement {
         opcodes[0] = pushi;
         opcodes = append(opcodes, integerToBytes(0));
         opcodes = append(opcodes, popa);
-        opcodes = append(opcodes, ret);
+        opcodes = append(opcodes, halt);  // returning from main halts the program
 
         return opcodes;
     }
