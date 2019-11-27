@@ -14,7 +14,7 @@ public class Pushv extends Statement {
 
     public byte[] generateOpcodes(String[] tokens) {
         byte[] opcodes = new byte[1];
-        byte[] location = integerToBytes(symbol_table.get("main" + tokens[1]) - 1);  // -1 is hacky solution to offset problem
+        byte[] location = integerToBytes(symbol_table.get("main" + tokens[1]));
 
         opcodes[0] = pushi;
         opcodes = append(opcodes, location);
