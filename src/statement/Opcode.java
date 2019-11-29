@@ -38,4 +38,9 @@ public class Opcode {
         System.out.println("Statement: " + tokens[0] + " not found. Make sure the statement is contained in statementStrings array.");
         return null;
     }
+
+    public void createLabel(String[] tokens, int offset) {
+        Lab lab = new Lab();
+        lab.addLabel(tokens, offset);
+    }
 }
