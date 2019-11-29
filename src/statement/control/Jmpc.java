@@ -14,9 +14,8 @@ public class Jmpc extends Statement {
     }
 
     public byte[] generateOpcodes(String[] tokens) {
-        //int location = symbol_table.get("main" + tokens[1]);  // jump location is offset immediately after label
-        //String[] value = {"pushi", Integer.toString(location)};
-        String[] value = {"pushi", Integer.toString(22)};  // this is currently the hardcoded pc after the label in jmp.txt
+        int location = symbol_table.getOrDefault("main" + tokens[1], 0);  // default location if this is the first read
+        String[] value = {"pushi", Integer.toString(location)};
 
         byte[] opcodes = pushi.generateOpcodes(value);
         opcodes = append(opcodes, jmpc);
