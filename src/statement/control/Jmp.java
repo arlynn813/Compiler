@@ -14,7 +14,7 @@ public class Jmp extends Statement {
     }
 
     public byte[] generateOpcodes(String[] tokens) {
-        int location = symbol_table.get("main" + tokens[1]);  // this location is incorrect
+        int location = symbol_table.getOrDefault("main" + tokens[1], 0);  /// default location if this is the first read
         String[] value = {"pushi", Integer.toString(location)};  // should be the pc offset of first instruction after label
 
         byte[] opcodes = pushi.generateOpcodes(value);
