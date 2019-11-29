@@ -17,7 +17,7 @@ pushv one
 pushv zero
 cmpe
 
-//jmpc error
+jmpc error
 
 // Target One
 lab target1
@@ -43,7 +43,7 @@ lab target3
 printi 3003
 
 jmp target2
-//jmp error
+jmp error
 
 // Target 4
 lab target4

@@ -15,13 +15,6 @@ public class Subr extends Statement {
     // Only usage of this statement: subr 0 main
     // This statement will only/always be found at the first line of the input file
     public byte[] generateOpcodes(String[] tokens) {
-
-        // Instructor steps:
-        // pushi 16
-        // pushi 17
-        // pushi 1
-        // call
-
         byte[] opcodes = new byte[1];
         opcodes[0] = pushi;
         opcodes = append(opcodes, integerToBytes(16));
@@ -32,8 +25,5 @@ public class Subr extends Statement {
         opcodes = append(opcodes, call);
 
         return opcodes;
-    }
-    public void update_pc() {
-        pc = 17;
     }
 }

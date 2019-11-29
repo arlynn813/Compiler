@@ -28,14 +28,6 @@ public class Opcode {
             statementMap.put(statementStrings[i], statementObjects[i]);
         }
     }
-    public void set_pc(String [] tokens){
-        if (statementMap.containsKey(tokens[0])) {
-            statementMap.get(tokens[0]).update_pc();
-        }
-    }
-    public void up_lab(String [] tokens){
-        (statementMap.get(tokens[0])).update_lab(tokens);
-    }
 
     public byte[] getOpcodes(String[] tokens) {
         if (statementMap.containsKey(tokens[0])) {
