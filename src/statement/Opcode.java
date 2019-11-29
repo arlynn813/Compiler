@@ -23,6 +23,8 @@ public class Opcode {
     private static Map<String, Statement> statementMap = new HashMap<>();
 
     public Opcode() {
+        statementObjects[0].setStatementMap(statementMap);
+
         // Map strings to objects
         for (int i = 0; i < statementStrings.length; i++) {
             statementMap.put(statementStrings[i], statementObjects[i]);

@@ -4,15 +4,9 @@ import statement.Statement;
 
 
 public class Cmplt extends Statement {
-    private byte cmplt;
-
-    public Cmplt() {
-        cmplt = (byte) 136;
-    }
+    private static byte cmplt = (byte) 136;
 
     public byte[] generateOpcodes(String[] tokens) {
-        byte[] opcodes = new byte[1];
-        opcodes[0] = cmplt;
-        return opcodes;
+        return new byte[] {cmplt};
     }
 }

@@ -2,8 +2,14 @@ package statement;
 import java.util.*;
 
 public class Statement {
-    public Statement() {}
     protected static Map<String,Integer> symbol_table = new HashMap<>();
+    protected static Map<String, Statement> statementMap;
+
+    public Statement() {}
+
+    void setStatementMap(Map<String, Statement> map) {
+        statementMap = map;
+    }
 
     public byte[] generateOpcodes(String[] tokens) {
         // This method should NEVER be called. It is simply overridden by all the derived classes

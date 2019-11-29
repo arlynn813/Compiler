@@ -4,11 +4,7 @@ import statement.Statement;
 
 
 public class Pushi extends Statement {
-    private byte pushi;
-
-    public Pushi() {
-        pushi = (byte) 70;
-    }
+    private static byte pushi = (byte) 70;
 
     public byte[] generateOpcodes(String[] tokens) {
         byte[] opcodes = new byte[1];

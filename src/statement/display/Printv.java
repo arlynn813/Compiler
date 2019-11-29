@@ -4,26 +4,15 @@ import statement.Statement;
 
 
 public class Printv extends Statement {
-    private byte pushi;
-    private byte pushvi;
-    private byte printi;
-
-    public Printv() {
-        pushi = (byte) 70;
-        pushvi = (byte) 74;
-        printi = (byte) 146;
-    }
+    private static byte pushvi = (byte) 74;
+    private static byte printi = (byte) 146;
 
     public byte[] generateOpcodes(String[] tokens) {
-        byte[] opcodes = new byte[1];
-
-        opcodes[0] = pushi;
-        int offset = symbol_table.get("main" + tokens[1]);
-        opcodes = append(opcodes, integerToBytes(offset));
+        String[] value = {"pushi", Integer.toString(symbol_table.get("main" + tokens[1]))};
+        byte[] opcodes = statementMap.get("pushi").generateOpcodes(value);
         opcodes = append(opcodes, pushvi);
         opcodes = append(opcodes, printi);
 
         return opcodes;
-
     }
 }
