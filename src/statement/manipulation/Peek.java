@@ -7,10 +7,9 @@ public class Peek extends Statement {
     private static byte peek = (byte) 86;
 
     public byte[] generateOpcodes(String[] tokens) {
-        String[] variable = {"pushv", tokens[1]};
-        String[] value = {"pushi", tokens[2]};
-
-        byte[] opcodes = statementMap.get("pushv").generateOpcodes(variable);
+        String[] value = {"pushi", Integer.toString(symbol_table.get("main" + tokens[1]))};
+        byte[] opcodes = statementMap.get("pushi").generateOpcodes(value);
+        value[1] = tokens[2];
         opcodes = append(opcodes, statementMap.get("pushi").generateOpcodes(value));
         opcodes = append(opcodes, peek);
 
